@@ -1,0 +1,36 @@
+
+import java.util.*;
+
+public class Main{
+    public static void main(String args[]) {
+
+        int arr[] ={23,3,0};
+        ArrayList<Integer> temp= new ArrayList<>();
+        subsequence(arr,temp,0);
+
+
+    }
+
+   static void subsequence(int arr[],ArrayList<Integer> temp,int index){
+        if(index==arr.length){
+
+            if(temp.size()>=0){
+                System.out.println(temp);
+            }
+
+
+
+        }
+
+        else{
+            subsequence(arr,temp,index+1);
+            temp.add(arr[index]);
+
+            subsequence(arr,temp,index+1);
+            temp.remove(temp.size()-1);
+        }
+        return;
+   }
+
+
+}
