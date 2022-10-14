@@ -1,0 +1,20 @@
+public class Main{
+    public static void main(String args[]){
+
+        System.out.println(isPal("Karan"));
+        System.out.println(isPal("1234321"));
+
+    }
+
+    static boolean PalHelper(String str,int start,int end){
+        if(start>=end)
+            return true;
+        if(str.charAt(start)!=str.charAt(end))
+            return false;
+        return PalHelper(str,start+1,end-1);
+    }
+
+    static boolean isPal(String str){
+        return PalHelper(str,0,str.length()-1);
+    }
+}
